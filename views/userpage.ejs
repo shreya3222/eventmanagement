@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTO</title>
+    <link rel="icon" href="EVENTO.ICO">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Baumans&display=swap" rel="stylesheet">
+</head>
+<style>
+   *{
+        font-family:'Baumans', system-ui;
+    } 
+    .hfont{
+        font-family:'Barrio', system-ui;
+        color: white;
+    }
+    .bg-img {
+  /* The image used */
+  background-image: url(/images/austin-neill-hgO1wFPXl3I-unsplash.jpg);
+  min-height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.topnav{
+    background-color: rgba(0, 0, 0, 0.795);
+    margin-left: 0%;
+}
+nav a{
+  margin-left: 2vh;
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.bottom-left {
+  position: absolute;
+  bottom: 20vh;
+  left: 30vh;
+  color: white;
+}
+.movies-list {
+    width: 94%;
+    height: 500px;
+    position: relative;
+    padding-top: 0;
+    padding-left: 105px;
+}
+
+.movie {
+    position: relative;
+    width: 100%;
+}
+
+.card-container {
+    position: relative;
+    width: 95%;
+    padding-left: 10px;
+    height: 480px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+}
+
+.card-container::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    position: relative;
+    min-width: 225px;
+    width: 225px;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 30px;
+}
+
+.card-img {
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+}
+
+.card-body {
+    width: 100%;
+    height: 35px;
+    position: absolute;
+    bottom: 0;
+    background: #000;
+    padding: 10px;
+    display: flex;
+}
+
+.card-body p {
+    color: #fff;
+    position: absolute;
+    font-size: 16px;
+    padding-left: 30px;
+    top: 7px;
+}
+
+.card-body ion-icon {
+    color: #c4242b;
+    font-size: 20px;
+}
+
+.movie h3 {
+    padding-top: 10px;
+    font-size: 18px;
+}
+
+.detail {
+    font-size: 15px;
+    color: #b1aead;
+}
+
+.strip {
+    padding-left: 145px;
+    height: 10px;
+    padding-top: 50px;
+}
+
+.title-enter {
+    color: #000;
+    opacity: 0.9;
+    padding-left: 147px;
+    padding-top: 200px;
+    text-transform: capitalize;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.enter-list {
+    width: 94%;
+    height: 250px;
+    position: relative;
+    padding-top: 0;
+    padding-left: 105px;
+    padding-top: 15px;
+}
+
+.enter-container {
+    position: relative;
+    width: 95%;
+    padding-left: 10px;
+    height: 250px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+}
+
+.enter-container::-webkit-scrollbar {
+    display: none;
+}
+
+.enter-container .card {
+    position: relative;
+    min-width: 225px;
+    width: 225px;
+    height: 225px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 30px;
+}
+
+.enter-container .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/***** Wrapper *****/
+
+.wrapper {
+    display: block;
+}
+.title {
+    color: #000;
+    opacity: 0.9;
+    padding-left: 147px;
+    padding-top: 40px;
+    text-transform: capitalize;
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom: 30px;
+}
+
+
+.hfont{
+        font-family:'Barrio', system-ui;
+        color: rgb(0, 0, 0);
+    }
+
+</style>
+<body>
+    <div class="bg-img">
+        <div class="container">
+          
+          <div class="topnav">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary pt-3" style="--bs-bg-opacity: 0;">
+              <div class="container-fluid opacity-100">
+                <a class="navbar-brand text-light ps-4" href="#">EVENTO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <form class="d-flex" role="search" style="width: 50vh;">
+                      <input class="form-control me-2" type="search" placeholder="Search for the event!!" aria-label="Search">
+                    </form>
+                    <li class="nav-item">
+                      <a class="nav-link active text-light ps-5" aria-current="page" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-light ps-5" href="#s1">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-light ps-5" href="#s3">EVENTS</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                      <a class="nav-link text-light ps-5" href="/register">SIGN UP</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-light ps-5" HREF="#s4">CONTACTS</a>
+                    </li>
+                  </ul>
+                  
+                </div>
+              </div>
+            </nav>
+          </div>
+          <div style="background-color: rgba(0, 0, 0, 0.37);color: #fff;font-size: 13vh;margin-top:20vh ;">Welcome user!!</div>
+        </div>
+      </div>
+
+      <h1 class="title" style="padding-top: 20vh;">Recommended Events</h1>
+      <div class="movies-list">
+        <p style="margin-left: 8vh;">Scroll horizontally-></p>
+          <div class="card-container">
+              <div class="movie">
+                  <div class="card">
+                      <img src="/images/evangeline-shaw-nwLTVwb7DbU-unsplash.jpg" class="card-img" alt="">
+                      <div class="card-body">
+                          <ion-icon name="heart-sharp"></ion-icon>
+                          <p>93% &ThinSpace; 928 votes</p>
+                      </div>
+                  </div>
+                  <h3>Theerppu</h3>
+                  <button type="button" class="btn btn-secondary">DETAILS</button>
+              </div>
+
+              <div class="movie">
+                  <div class="card">
+                      <img src="/images/austin-neill-hgO1wFPXl3I-unsplash.jpg" class="card-img" alt="">
+                      <div class="card-body">
+                          <ion-icon name="heart-sharp"></ion-icon>
+                          <p>92% &ThinSpace; 16k votes</p>
+                      </div>
+                  </div>
+                  <h3>Thallumaala</h3>
+                  <button type="button" class="btn btn-secondary">DETAILS</button>
+              </div>
+
+              <div class="movie">
+                  <div class="card">
+                      <img src="/images/noiseporn-JNuKyKXLh8U-unsplash.jpg" class="card-img" alt="">
+                      <div class="card-body">
+                          <ion-icon name="heart-sharp"></ion-icon>
+                          <p>94% &ThinSpace; 14k votes</p>
+                      </div>
+                  </div>
+                  <h3>Nna Thaan </h3>
+                  <button type="button" class="btn btn-secondary">DETAILS</button>
+              </div>
+
+              <div class="movie">
+                  <div class="card">
+                      <img src="/images/bg.jpg" class="card-img" alt="">
+                      <div class="card-body">
+                          <ion-icon name="heart-sharp"></ion-icon>
+                          <p>59% &ThinSpace; 74k votes</p>
+                      </div>
+                  </div>
+                  <h3>Liger</h3>
+                  <button type="button" class="btn btn-secondary">DETAILS</button>
+              </div>
+
+              <div class="movie">
+                  <div class="card">
+                      <img src="/images/andrea-mininni-VLlkOJdzLG0-unsplash.jpg" class="card-img" alt="">
+                      <div class="card-body">
+                          <ion-icon name="heart-sharp"></ion-icon>
+                          <p>87% &ThinSpace; 34k votes</p>
+                      </div>
+                  </div>
+                  <h3>Thiruchitrambalam</h3>
+                  <button type="button" class="btn btn-secondary">DETAILS</button>
+              </div>
+
+              <div class="movie">
+                <div class="card">
+                    <img src="/images/andrea-mininni-VLlkOJdzLG0-unsplash.jpg" class="card-img" alt="">
+                    <div class="card-body">
+                        <ion-icon name="heart-sharp"></ion-icon>
+                        <p>87% &ThinSpace; 34k votes</p>
+                    </div>
+                </div>
+                <h3>Thiruchitrambalam</h3>
+                <button type="button" class="btn btn-secondary">DETAILS</button>
+            </div>
+
+            <div class="movie">
+              <div class="card">
+                  <img src="/images/andrea-mininni-VLlkOJdzLG0-unsplash.jpg" class="card-img" alt="">
+                  <div class="card-body">
+                      <ion-icon name="heart-sharp"></ion-icon>
+                      <p>87% &ThinSpace; 34k votes</p>
+                  </div>
+              </div>
+              <h3>Thiruchitrambalam</h3>
+              <button type="button" class="btn btn-secondary">DETAILS</button>
+          </div>
+
+          <div class="movie">
+            <div class="card">
+                <img src="/images/andrea-mininni-VLlkOJdzLG0-unsplash.jpg" class="card-img" alt="">
+                <div class="card-body">
+                    <ion-icon name="heart-sharp"></ion-icon>
+                    <p>87% &ThinSpace; 34k votes</p>
+                </div>
+            </div>
+            <h3>Thiruchitrambalam</h3>
+            <button type="button" class="btn btn-secondary" >DETAILS</button>
+        </div>
+          </div>
+          
+      </div>
+<div>
+  <h3 class="title">Ours events</h3>
+  <div class="row" style="padding:0vh 20vh;padding-bottom: 5vh;">
+    <div class="col-2">
+      <img style="height:35vh;width:35vh;padding:3vh;border-radius: 50px;"src="/images/noiseporn-JNuKyKXLh8U-unsplash.jpg">
+      <p style="padding-left: 6vh;">WORKSHOPS</p>
+    </div>
+
+
+    <div class="col-2">
+      <img style="height:35vh;width:35vh;padding: 3vh;border-radius: 50px;"src="/images/noiseporn-JNuKyKXLh8U-unsplash.jpg">
+      <p style="padding-left: 6vh;">KIDS ZONE</p>
+    </div>
+
+
+    <div class="col-2">
+      <img style="height:35vh;width:35vh;padding: 3vh;border-radius: 50px;"src="/images/noiseporn-JNuKyKXLh8U-unsplash.jpg">
+      <p style="padding-left: 6vh;">COMEDY SHOWS</p>
+    </div>
+
+
+    <div class="col-2">
+      <img style="height:35vh;width:35vh;padding: 3vh;border-radius: 50px;"src="/images/noiseporn-JNuKyKXLh8U-unsplash.jpg">
+      <p style="padding-left: 6vh;">MUSIC SHOWS</p>
+    </div>
+
+
+    <div class="col-2">
+      <img style="height:35vh;width:35vh;padding: 3vh;border-radius: 50px;"src="/images/noiseporn-JNuKyKXLh8U-unsplash.jpg">
+      <p style="padding-left: 6vh;">FOOD FESTS</p>
+    </div>
+ 
+
+    <div class="col-2">
+      <img style="height:35vh;width:35vh;padding: 3vh;border-radius: 50px;"src="/images/noiseporn-JNuKyKXLh8U-unsplash.jpg">
+      <p style="padding-left: 6vh;">ART & CRAFT</p>
+    </div>
+    <a href="/api/events"><button type="button" class="btn btn-secondary" >SHOW ALL EVENTS</button></a>
+</div>
+
+
+<!-- userpage.ejs -->
+
+<form id="rateEventForm" method="POST" action="/rate-event">
+  <center>
+    <div style="margin: 10vh; margin-bottom: 5vh;">
+      <h1 class="hfont">RATE EVENT</h1>
+      <div class="form">
+        <div>
+        <label for="eventName">Event Name:</label><br>
+        <select id="eventId" name="eventId" required>
+          <% events.forEach(event => { %>
+            <option value="<%= event.eventid %>"><%= event.eventname %></option>
+          <% }); %>
+        </select><br><br></div>
+        <div>
+          <label>YOUR EXPERIENCE</label>
+        <input type="number" name="rating" min="1" max="5" autocomplete="off" required />
+        </div>
+        
+      </div>
+      <!-- Add a comment input if desired -->
+      <textarea name="comment" rows="4" cols="50" placeholder="Optional comment"></textarea> 
+      <br />
+      <button type="submit">Submit Rating</button>
+    </div>
+  </center>
+</form>
+
+
+
+
+
+<footer style="background-color: #0F1B24;">
+  <center><h1 class="hfont" style="font-size:45px;padding:5vh;color: #fff;"id="s4">CONTACT US</h1></center>
+  <div class="row">
+    <div class="col-4" style="padding-left:10vh;color:white">
+       <h3>ADDRESS</h3><br>
+       <p>JSS Hostel,<br>Srinivaspura,Kengeri,<br>Bangalore-560060</p><br><br>
+       <h3>GENERAL ENQUIRES</h3>
+       <p>evento@gmail.com<br>+91-990056460<br>+91-9740723439</p>
+    </div>
+    <div class="col-4" style="padding-left:10vh;color:white">
+      <h3 style="margin-top: 34vh;">SOCAL MEDIA</h3><br>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-whatsapp"></i>
+      <i class="fa-brands fa-x-twitter"></i>
+      <i class="fa-brands fa-facebook"></i>
+    </div>
+    <div class="col-4">
+       <h2 class="hfont" style="font-size:40px;padding: 5vh;color: white;">EVENTO</h2>
+       <p style="font-size:18px;padding: 2vh;color: white;">
+        We are leading event management company <br>dedicatedto bringing your visions to life.<br> Creating unforgettable experiences tailored<br> for your unique requirements.
+       </p>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

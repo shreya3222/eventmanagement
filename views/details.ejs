@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="icon" href="/images/EVENTO.ICO">
+  <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barrio&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Baumans', sans-serif;
+    }
+    .card {
+      margin: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card-header {
+      background-color: #0F1B24;
+      color: #ffffff;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+    .card-body p {
+      font-size: 18px;
+    }
+    .btn-book {
+      background-color: #0F1B24;
+      color: #ffffff;
+    }
+    nav{
+        background-color: #0f1b24d7;
+    }
+    .container{
+        margin-top: 10vh;
+    }
+    *{
+        font-family:'Baumans', system-ui;
+    }
+    .hfont{
+        font-family:'Barrio', system-ui;
+        color: rgb(255, 255, 255);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary pt-3" style="--bs-bg-opacity: 0;">
+    <div class="container-fluid opacity-100">
+      <a class="navbar-brand text-light ps-4" href="#">EVENTO</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-light ps-5" aria-current="page" href="#">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light ps-5" href="#s1">ABOUT US</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light ps-5" href="#s3">EVENTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light ps-5" href="/register">SIGN UP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light ps-5" HREF="#s4">CONTACTS</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search for the event!!" aria-label="Search">
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="text-center hfont">Event Details</h2>
+          </div>
+          <div class="card-body">
+            <p><strong>Event Name:</strong> <%= eventData.event.eventname %></p>
+            <p><strong>Event Date:</strong> <%= eventData.event.eventdate %></p>
+            <p><strong>Ticket Price:</strong> <%= eventData.event.ticketprice %></p>
+            <p><strong>Venue:</strong> <%= eventData.event.venuename %></p>
+            <p><strong>Event Type:</strong> <%= eventData.event.etype %></p>
+            <p><strong>Contact:</strong> <%= eventData.event.econtact %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="text-center hfont">Venue Details</h2>
+          </div>
+          <div class="card-body">
+            <p><strong>Venue Name:</strong> <%= eventData.venue.venuename %></p>
+            <p><strong>Address:</strong> <%= eventData.venue.address %></p>
+            <p><strong>Capacity:</strong> <%= eventData.venue.capacity %></p>
+            <p><strong>Food/Beverages:</strong> <%= eventData.venue.foodbeverages %></p>
+          </div>
+        </div>
+        <button type="button" class="btn btn-secondary" style="width: 20vw;margin-left: 5vh;background-color: #0F1B24;" id="bookBtn" data-eventid="<%= eventData.event.eventid %>" href="/api/tickets">BOOK</button>
+
+      </div>
+    </div>
+  </div>
+  <footer style="background-color: #0F1B24;margin-top: 10vh;">
+    <center><h1 class="hfont" style="font-size:45px;padding:5vh"id="s4">CONTACT US</h1></center>
+    <div class="row">
+      <div class="col-4" style="padding-left:10vh;color:white">
+         <h3>ADDRESS</h3><br>
+         <p>JSS Hostel,<br>Srinivaspura,Kengeri,<br>Bangalore-560060</p><br><br>
+         <h3>GENERAL ENQUIRES</h3>
+         <p>evento@gmail.com<br>+91-990056460<br>+91-9740723439</p>
+      </div>
+      <div class="col-4" style="padding-left:10vh;color:white">
+        <h3 style="margin-top: 34vh;">SOCAL MEDIA</h3><br>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-whatsapp"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-facebook"></i>
+      </div>
+      <div class="col-4">
+         <h2 class="hfont" style="font-size:40px;padding: 5vh;">EVENTO</h2>
+         <p style="font-size:18px;padding: 2vh;color: white;">
+          We are leading event management company <br>dedicatedto bringing your visions to life.<br> Creating unforgettable experiences tailored<br> for your unique requirements.
+         </p>
+      </div>
+    </div>
+  </footer>
+  <!-- Add additional content or styling as needed -->
+</body>
+
+  <script>
+  document.getElementById('bookBtn').addEventListener('click', () => {
+    const eventId = document.getElementById('bookBtn').getAttribute('data-eventid');
+    // Assuming you have the user ID available in your JavaScript code
+    const userId = 1; // Replace with the actual user ID
+
+    const bookingData = {
+      eventid: eventId,
+      userid: userId
+      // Add any other relevant data for the booking
+    };
+
+    fetch('/api/book', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(bookingData)
+    })
+    .then(response => {
+      if (response.ok) {
+        // Redirect to the booking page after successful booking
+        window.location.href = '/api/tickets';
+      } else {
+        console.error('Error booking event');
+      }
+    })
+    .catch(error => {
+      console.error('Error booking event:', error);
+    });
+  });
+</script>
+
+</html>

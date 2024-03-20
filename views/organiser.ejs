@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTO</title>
+    <link rel="icon" href="EVENTO.ICO">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Baumans&display=swap" rel="stylesheet">
+</head>
+<style>
+    .sign1{
+        background: linear-gradient(rgba(0, 0, 5, 0.299), rgb(0, 0, 5)),url("/images/evangeline-shaw-nwLTVwb7DbU-unsplash.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 150vh;
+    }
+    label{
+        color:white;
+    }
+    *{
+        font-family:'Baumans', system-ui;
+    } 
+    .hfont{
+        font-family:'Barrio', system-ui;
+        color: white;
+    }
+</style>
+<body class="sign1">
+    <form style="background-color: rgba(0, 0, 0, 0.322);" method="POST" action="api/organiser">
+        <center><h1 style="color: white;padding:10vh;"CLASS="hfont"> GIVE US YOUR EVENT DETAILS...</h1>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="eventname"> EVENT NAME</label>
+            <input type="text" name="eventname"  class="form-control is-valid" id="eventname" placeholder="EventName" required >
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="eventdate" >EVENT  DATE </label>
+            <div class="input-group">
+              <input type="text" name="eventdate"class="form-control is-valid" id="eventdate" placeholder="EventDate" aria-describedby="inputGroupPrepend3" required >
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="ticketprice">TICKET PRICE</label>
+            <input type="number" name="ticketprice"class="form-control is-valid" id="ticketprice" placeholder="TicketPrice" required>
+            
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="venuename">VENUE</label>
+            <input type="text" name="venuename"class="form-control is-valid" id="venuename" placeholder="Venue" required>
+          </div>
+        
+        </div>
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="etype">EVENT TYPE</label>
+              <input type="text" name="etype"class="form-control is-valid" id="etype" placeholder="EventType" required>  
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="econtact">CONTACTS</label>
+              <input type="number" name="econtact"class="form-control is-valid" id="econtact" placeholder="Contacts" required>  
+            </div>
+          </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input is-valid" type="checkbox" value="" id="invalidCheck3" style="color:white;margin-left:70vh;" required>
+            <label class="form-check-label" for="invalidCheck3" style="color:white;margin-left:-100vh;margin-bottom:5vh;">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form></center>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVENTO</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="icon" href="/images/EVENTO.ICO">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barrio&family=Baumans&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/e03d6b8c21.js" crossorigin="anonymous"></script>
+  <style>
+    
+*{
+        font-family:'Baumans', system-ui;
+        
+    }
+    .hfont{
+        font-family:'Barrio', system-ui;
+        color: rgb(255, 255, 255);
+    }
+    .card-ticket {
+      width: 18rem;
+      margin: 20px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .card-ticket:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-ticket .card-body {
+      padding: 1rem;
+    }
+
+    .card-ticket .card-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    .card-ticket .card-text {
+      color: #6c757d;
+    }
+
+    .card-ticket .card-footer {
+      background-color: #272829;
+      border-top: none;
+      color: white;
+    }
+
+    .card-body{
+      background-color: rgb(209, 209, 184);
+    }
+
+    .cancel-btn {
+      background-color: #DF5454;
+      border: none;
+      color: white;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+
+    .cancel-btn:hover {
+      background-color: #b33939;
+    }
+   
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary pt-3" style="background-color: #0f1b24eb;">
+    <div class="container-fluid opacity-100" >
+      <a class="navbar-brand text-light ps-4" href="#">EVENTO</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-light ps-5" aria-current="page" href="#">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light ps-5" href="#s1">ABOUT US</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light ps-5" href="#s3">EVENTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light ps-5" href="/register">SIGN UP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light ps-5" HREF="#s4">CONTACTS</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search for the event!!" aria-label="Search">
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <h1 class="text-center my-4 HFONT">YOUR BOOKINGS</h1>
+    <div class="row">
+      <% bookings.forEach(booking => { %>
+        <div class="col-md-4">
+          <div class="card card-ticket" data-bookingid="<%= booking.bookingid %>">
+            <div class="card-body">
+              <h5 class="card-title">Event: <%= booking.eventname %></h5>
+              <p class="card-text">Booking ID: <%= booking.bookingid %></p>
+              <p class="card-text">User ID: <%= booking.userid %></p>
+              <p class="card-text">Ticket Price: <%= booking.ticketprice %></p>
+            </div>
+            <div class="card-footer text-muted">
+              <p class="card-text">Venue: <%= booking.venuename %></p>
+              <p class="card-text">Booking Time: <%= booking.bookingtime %></p>
+              <form action="/cancel_booking" method="post">
+                <input type="hidden" name="bookingId" value="<%= booking.bookingid %>">
+                <button class="cancel-btn" type="submit">Cancel</button>
+              </form>
+            </div>
+          </div>
+          
+        </div>
+
+      <% }); %>
+    </div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+</html>
