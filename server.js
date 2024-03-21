@@ -18,11 +18,9 @@ app.use(express.static("/public/images"));
 app.get("/", (req, res) => {
   res.render("index.ejs");
 });
-
 app.get("/login", (req, res) => {
   res.render("login.ejs");
 });
-
 app.get("/register", (req, res) => {
   res.render("register.ejs");
 });
@@ -252,6 +250,7 @@ app.get("/api/tickets", (req, res) => {
 });
 
 
+
 //deleting
 app.post('/cancel_booking', (req, res) => {
   const bookingId = req.body.bookingId;
@@ -307,6 +306,7 @@ app.post('/rate-event', (req, res) => {
       }
   });
 });
+
 
 
 // Start the server
