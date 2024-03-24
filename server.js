@@ -21,6 +21,9 @@ app.get("/", (req, res) => {
 app.get("/login", (req, res) => {
   res.render("login.ejs");
 });
+app.get("/logino", (req, res) => {
+  res.render("logino.ejs");
+});
 app.get("/register", (req, res) => {
   res.render("register.ejs");
 });
@@ -189,7 +192,7 @@ app.get('/details/:eventId', (req, res) => {
 
 
 
-//login
+//login for user
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
   const sql = 'SELECT * FROM user WHERE username = ? AND password = ?';
@@ -207,6 +210,23 @@ app.post('/login', (req, res) => {
   });
 });
 
+//login for ORGANISER
+app.post('/logino', (req, res) => {
+  const { eventname, econtact } = req.body;
+  const sql = 'SELECT * FROM organiser WHERE eventname = ? AND econtact = ?';
+  pool.query(sql, [eventname, econtact], (error, results) => {
+      if (error) {
+          console.error("Error executing query:", error);
+          return res.status(500).send("Internal Server Error");
+      }
+      if (results.length > 0) {
+          // Redirect to home page on successful login
+          res.redirect('/api/events');
+      } else {
+          res.send("Invalid details.");
+      }
+  });
+});
 
 
 
@@ -306,7 +326,6 @@ app.post('/rate-event', (req, res) => {
       }
   });
 });
-
 
 
 // Start the server
