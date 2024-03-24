@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EVENTO</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="icon" href="/images/EVENTO.ICO">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +19,7 @@
     
 *{
         font-family:'Baumans', system-ui;
+        
         
     }
     .hfont{
@@ -69,26 +71,28 @@
     .cancel-btn:hover {
       background-color: #b33939;
     }
-   
+   nav{
+    background-color: #272829;
+   }
   </style>
 </head>
-<body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary pt-3" style="background-color: #0f1b24eb;">
+<body style="background-color: #ffffff;">
+  <nav class="navbar navbar-expand-lg  pt-3" style="background-color: #0f1b24eb;">
     <div class="container-fluid opacity-100" >
-      <a class="navbar-brand text-light ps-4" href="#">EVENTO</a>
+      <a class="navbar-brand text-light ps-4" href="/">EVENTO</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active text-light ps-5" aria-current="page" href="#">HOME</a>
+            <a class="nav-link active text-light ps-5" aria-current="page" href="/">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light ps-5" href="#s1">ABOUT US</a>
+            <a class="nav-link text-light ps-5" href="/">ABOUT US</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light ps-5" href="#s3">EVENTS</a>
+            <a class="nav-link text-light ps-5" href="/api/events">EVENTS</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-light ps-5" href="/register">SIGN UP</a>
@@ -97,14 +101,12 @@
             <a class="nav-link text-light ps-5" HREF="#s4">CONTACTS</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search for the event!!" aria-label="Search">
-        </form>
+       
       </div>
     </div>
   </nav>
   <div class="container">
-    <h1 class="text-center my-4 HFONT">YOUR BOOKINGS</h1>
+    <h1 class="text-center my-4 hfont">YOUR BOOKINGS</h1>
     <div class="row">
       <% bookings.forEach(booking => { %>
         <div class="col-md-4">
@@ -129,6 +131,30 @@
       <% }); %>
     </div>
   </div>
+  <footer style="background-color: #0F1B24;margin-top: 15vh;">
+    <center><h1 class="hfont" style="font-size:45px;padding:5vh"id="s4">CONTACT US</h1></center>
+    <div class="row">
+      <div class="col-4" style="padding-left:10vh;color:white">
+         <h3>ADDRESS</h3><br>
+         <p>JSS Hostel,<br>Srinivaspura,Kengeri,<br>Bangalore-560060</p><br><br>
+         <h3>GENERAL ENQUIRES</h3>
+         <p>evento@gmail.com<br>+91-990056460<br>+91-9740723439</p>
+      </div>
+      <div class="col-4" style="padding-left:10vh;color:white">
+        <h3 style="margin-top: 34vh;">SOCAL MEDIA</h3><br>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-whatsapp"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-facebook"></i>
+      </div>
+      <div class="col-4">
+         <h2 class="hfont" style="font-size:40px;padding: 5vh;">EVENTO</h2>
+         <p style="font-size:18px;padding: 2vh;color: white;">
+          We are leading event management company <br>dedicatedto bringing your visions to life.<br> Creating unforgettable experiences tailored<br> for your unique requirements.
+         </p>
+      </div>
+    </div>
+  </footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   
