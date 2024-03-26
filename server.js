@@ -39,7 +39,9 @@ app.get("/events", (req, res) => {
 app.get("/tickets", (req, res) => {
   res.render("tickets.ejs");
 });
-
+app.get("/eventdetails", (req, res) => {
+  res.render("eventdetails.ejs");
+});
 
 
 // Create a MySQL connection pool
@@ -99,7 +101,7 @@ app.post("/api/organiser", (req, res) => {
         return;
       }
       console.log("Event organized successfully");
-      res.redirect('/api/events');
+      res.redirect('/logino');
     });
 });
 
@@ -221,12 +223,51 @@ app.post('/logino', (req, res) => {
       }
       if (results.length > 0) {
           // Redirect to home page on successful login
-          res.redirect('/api/events');
+          res.redirect(`/api/eventdetails?eventname=${encodeURIComponent(eventname)}`);
       } else {
           res.send("Invalid details.");
       }
   });
 });
+
+
+// Route to handle event details
+app.get('/api/eventdetails', (req, res) => {
+  const eventname = req.query.eventname; // Assuming eventname is passed as a query parameter
+  if (!eventname) {
+      return res.status(400).send("Event name is required.");
+  }
+
+  // Query to retrieve event details and count bookings
+  const sql = `
+    SELECT eventname, venuename, ticketprice, COUNT(bookingid) AS bookingCount
+    FROM booking
+    WHERE eventname = ?
+    GROUP BY eventname, venuename, ticketprice
+`;
+
+  pool.query(sql, [eventname], (error, results) => {
+      if (error) {
+          console.error("Error executing query:", error);
+          return res.status(500).send("Internal Server Error");
+      }
+      
+      if (results.length === 0) {
+          return res.status(404).send("Event not found.");
+      }
+
+      const eventData = results[0];
+      res.render('eventdetails', { eventData });
+  });
+});
+
+
+app.get('/eventdetails', (req, res) => {
+    const bookingCount = req.query.bookingCount;
+    res.send(`Number of bookings for this event: ${bookingCount}`);
+});
+
+
 
 
 

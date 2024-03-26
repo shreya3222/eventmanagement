@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTO</title>
+    <link rel="icon" href="EVENTO.ICO">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Baumans&display=swap" rel="stylesheet">
+</head>
+<style>
+    nav{
+      padding-top: 0px;
+      background-color: #0F1B24;
+    }
+    *{
+        font-family:'Baumans', system-ui;
+    }
+    .hfont{
+        font-family:'Barrio', system-ui;
+        color: white;
+    }
+    .card-text{
+        font-size: 5vh;
+    }
+    .card{
+        width: 50vh;
+    }
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg  pt-3" style="--bs-bg-opacity: 0;">
+        <div class="container-fluid opacity-100">
+          <a class="navbar-brand text-light ps-4" href="#">EVENTO</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-light ps-5" aria-current="page" href="/">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light ps-5" href="/">ABOUT US</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light ps-5" href="/api/events">EVENTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light ps-5" href="/register">SIGN UP</a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </nav>
+   <center> <h2 class="card-title hfont" style="color: black;margin-top: 15vh;margin-bottom: 5vh;"><%= eventData.eventname %> : Event Details</h2>
+    <div class="card" style="width: 180vh;background-color: rgba(0, 0, 0, 0.288);">
+        <div class="card-body">
+            <div >
+                <p class="card-text">Event Name: <%= eventData.eventname %></p>
+                <p class="card-text">Ticket Price: <%= eventData.ticketprice %></p>
+                <p class="card-text">Venue Name: <%= eventData.venuename %></p>    
+                <p class="card-text">Booking Count: <%= eventData.bookingCount %></p>   
+                <a href="/api/events" class="btn btn-dark">GO TO ALL EVENTS</a>
+                <a href="/organiser" class="btn btn-dark">REGISTER NEW EVENT</a>
+            </div>
+        </div>
+    </div></center>
+   
+</body>
+</html>
